@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <script type="text/javascript" src="jorge.js"></script>
+    <title>Chat de Atendimento Online</title>
+  </head>
+  <body>
+    <!-- Título -->
+    <h2 class="styleHeader">Atendimento Online</h2>
+    <!-- Chat -->
+    <div id="chatbox"></div>  
+    <div id="input-container">
+        <!-- Input de mensagem -->
+      <input type="text" id="input-text" placeholder="Digite sua mensagem aqui...">
+      <div style="gap: 5px;">
+        <!-- Botão de enviar -->
+        <button type="button" onclick="sendMessage()" id="send-button">Enviar</button>
+        <!-- Botão de receber -->
+        <button type="button" onclick="receiveMessage()" id="receive-button">Receber</button>
+      </div>
+    </div>
+  </body>
+  <!-- Abaixo é só porcaria de sacanagem -->
+    <footer>
+        <pre style="text-align: center;">
+
+            ▓█████▄  ▄▄▄       ███▄    █  ██▓ ██▓    ▓█████  ▄▄▄       ███▄    █    ▓█████     ██▒   █▓ ██▓ ███▄    █  ██▓ ▄████▄   ██▓ ███▄    █ 
+            ▒██▀ ██▌▒████▄     ██ ▀█   █ ▓██▒▓██▒    ▓█   ▀ ▒████▄     ██ ▀█   █    ▓█   ▀    ▓██░   █▒▓██▒ ██ ▀█   █ ▓██▒▒██▀ ▀█  ▓██▒ ██ ▀█   █ 
+            ░██   █▌▒██  ▀█▄  ▓██  ▀█ ██▒▒██▒▒██░    ▒███   ▒██  ▀█▄  ▓██  ▀█ ██▒   ▒███       ▓██  █▒░▒██▒▓██  ▀█ ██▒▒██▒▒▓█    ▄ ▒██▒▓██  ▀█ ██▒
+            ░▓█▄   ▌░██▄▄▄▄██ ▓██▒  ▐▌██▒░██░▒██░    ▒▓█  ▄ ░██▄▄▄▄██ ▓██▒  ▐▌██▒   ▒▓█  ▄      ▒██ █░░░██░▓██▒  ▐▌██▒░██░▒▓▓▄ ▄██▒░██░▓██▒  ▐▌██▒
+            ░▒████▓  ▓█   ▓██▒▒██░   ▓██░░██░░██████▒░▒████▒ ▓█   ▓██▒▒██░   ▓██░   ░▒████▒      ▒▀█░  ░██░▒██░   ▓██░░██░▒ ▓███▀ ░░██░▒██░   ▓██░
+             ▒▒▓  ▒  ▒▒   ▓▒█░░ ▒░   ▒ ▒ ░▓  ░ ▒░▓  ░░░ ▒░ ░ ▒▒   ▓▒█░░ ▒░   ▒ ▒    ░░ ▒░ ░      ░ ▐░  ░▓  ░ ▒░   ▒ ▒ ░▓  ░ ░▒ ▒  ░░▓  ░ ▒░   ▒ ▒ 
+             ░ ▒  ▒   ▒   ▒▒ ░░ ░░   ░ ▒░ ▒ ░░ ░ ▒  ░ ░ ░  ░  ▒   ▒▒ ░░ ░░   ░ ▒░    ░ ░  ░      ░ ░░   ▒ ░░ ░░   ░ ▒░ ▒ ░  ░  ▒    ▒ ░░ ░░   ░ ▒░
+             ░ ░  ░   ░   ▒      ░   ░ ░  ▒ ░  ░ ░      ░     ░   ▒      ░   ░ ░       ░           ░░   ▒ ░   ░   ░ ░  ▒ ░░         ▒ ░   ░   ░ ░ 
+               ░          ░  ░         ░  ░      ░  ░   ░  ░      ░  ░         ░       ░  ░         ░   ░           ░  ░  ░ ░       ░           ░ 
+             ░                                                                                     ░                      ░                                                                                              ░                      ░                       
+        
+        </pre>
+    </footer>
+</html>
+
+<!--    <script>
+    // Aqui foram declaradas as variaveis que recebem o id da tag correspondente
+      var chatbox = document.getElementById("chatbox");
+      var inputText = document.getElementById("input-text");
+      var sendButton = document.getElementById("send-button");
+      var receiveButton = document.getElementById("receive-button");
+
+      function addMessage(text, sender) {
+
+        // Adicione aqui o código onde cria o Titulo da mensagem
+        var messageAtendente = document.createElement("p");
+        messageAtendente.textContent = (sender === "user") ? "Você diz:" : "Atendente diz:";
+        messageAtendente.style.fontSize = "14px";
+        messageAtendente.style.textAlign = (sender === "user") ? "right" : "left";
+        chatbox.appendChild(messageAtendente);
+
+        // Adicione aqui o código onde cria o parágrafo da mensagem enviada
+        var message = document.createElement("p");
+        message.textContent = text;
+        message.style.padding = "5px";
+        message.style.borderRadius = "5px";
+        message.style.backgroundColor = (sender === "user") ? "#e6f2ff" : "#f2f2f2";
+        message.style.textAlign = (sender === "user") ? "right" : "left";
+        chatbox.appendChild(message);
+
+      }
+      sendButton.addEventListener("click", function() {
+        var text = inputText.value;
+        if (text !== "") {
+          addMessage(text, "user");
+          inputText.value = "";
+         
+        }});
+        receiveButton.addEventListener("click", function() {
+        var text = inputText.value;
+        if (text !== "") {
+          addMessage(text, "sender");
+          inputText.value = "";
+          
+        }});
+    </script>-->

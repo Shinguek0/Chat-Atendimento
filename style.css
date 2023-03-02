@@ -1,0 +1,68 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f7f7f7;
+  }
+
+  #chatbox {
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    height: 300px;
+    overflow-y: scroll;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+
+  #input-container {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+
+  #input-text {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+
+  }
+
+  #send-button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    cursor: pointer;
+  }
+  #send-button:hover {
+    background-color: #3e8e41;
+  }
+
+  #receive-button {
+    background-color: #4c53af;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    cursor: pointer;
+  }
+
+  #receive-button:hover {
+    background-color: #433e8e;
+  }
+ .styleHeader {
+    text-align: center;
+    color: blueviolet
+ }
+
+
