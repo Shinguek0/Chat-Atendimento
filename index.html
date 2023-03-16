@@ -1,13 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt" data-theme="light">
   <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-    <script type="text/javascript" src="jorge.js"></script>
+    <script type="text/javascript" src="jorge.js" defer></script>
     <title>Chat de Atendimento Online</title>
+    <script>
+      const changeThemeToDark = () => {
+          document.documentElement.setAttribute("data-theme", "dark");
+          localStorage.setItem("data-theme", "dark");
+      }
+  
+      const changeThemeToLight = () => {
+          document.documentElement.setAttribute("data-theme", "light");
+          localStorage.setItem("data-theme", 'light');
+      }
+      let theme = localStorage.getItem('data-theme');
+      if (theme == 'dark') changeThemeToDark();
+    </script>
   </head>
+  <header>
+    
+  </header>
   <body>
     <!-- Título -->
+    <div class="switch__container">
+      <input type="checkbox" name="toggle-dark" id="toggle-dark">
+      <label for="toggle-dark"></label>
+    </div>
     <h2 class="styleHeader">Atendimento Online</h2>
     <!-- Chat -->
     <div id="chatbox"></div>  
@@ -24,7 +46,7 @@
   </body>
   <!-- Abaixo é só porcaria de sacanagem -->
     <footer>
-        <pre style="text-align: center;">
+        <pre id="footer">
 
             ▓█████▄  ▄▄▄       ███▄    █  ██▓ ██▓    ▓█████  ▄▄▄       ███▄    █    ▓█████     ██▒   █▓ ██▓ ███▄    █  ██▓ ▄████▄   ██▓ ███▄    █ 
             ▒██▀ ██▌▒████▄     ██ ▀█   █ ▓██▒▓██▒    ▓█   ▀ ▒████▄     ██ ▀█   █    ▓█   ▀    ▓██░   █▒▓██▒ ██ ▀█   █ ▓██▒▒██▀ ▀█  ▓██▒ ██ ▀█   █ 
