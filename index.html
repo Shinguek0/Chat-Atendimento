@@ -27,8 +27,10 @@
   <body>
     <!-- Título -->
     <div class="switch__container">
-      <input type="checkbox" name="toggle-dark" id="toggle-dark">
-      <label for="toggle-dark"></label>
+      <label class="switch">
+        <input type="checkbox" name="toggle-dark" id="toggle-dark">
+        <span class="slider"></span>
+      </label>
     </div>
     <h2 class="styleHeader">Atendimento Online</h2>
     <!-- Chat -->
@@ -57,50 +59,7 @@
              ░ ▒  ▒   ▒   ▒▒ ░░ ░░   ░ ▒░ ▒ ░░ ░ ▒  ░ ░ ░  ░  ▒   ▒▒ ░░ ░░   ░ ▒░    ░ ░  ░      ░ ░░   ▒ ░░ ░░   ░ ▒░ ▒ ░  ░  ▒    ▒ ░░ ░░   ░ ▒░
              ░ ░  ░   ░   ▒      ░   ░ ░  ▒ ░  ░ ░      ░     ░   ▒      ░   ░ ░       ░           ░░   ▒ ░   ░   ░ ░  ▒ ░░         ▒ ░   ░   ░ ░ 
                ░          ░  ░         ░  ░      ░  ░   ░  ░      ░  ░         ░       ░  ░         ░   ░           ░  ░  ░ ░       ░           ░ 
-             ░                                                                                     ░                      ░                                                                                              ░                      ░                       
-        
+             ░                                                                                     ░                      ░                   
         </pre>
     </footer>
 </html>
-
-<!--    <script>
-    // Aqui foram declaradas as variaveis que recebem o id da tag correspondente
-      var chatbox = document.getElementById("chatbox");
-      var inputText = document.getElementById("input-text");
-      var sendButton = document.getElementById("send-button");
-      var receiveButton = document.getElementById("receive-button");
-
-      function addMessage(text, sender) {
-
-        // Adicione aqui o código onde cria o Titulo da mensagem
-        var messageAtendente = document.createElement("p");
-        messageAtendente.textContent = (sender === "user") ? "Você diz:" : "Atendente diz:";
-        messageAtendente.style.fontSize = "14px";
-        messageAtendente.style.textAlign = (sender === "user") ? "right" : "left";
-        chatbox.appendChild(messageAtendente);
-
-        // Adicione aqui o código onde cria o parágrafo da mensagem enviada
-        var message = document.createElement("p");
-        message.textContent = text;
-        message.style.padding = "5px";
-        message.style.borderRadius = "5px";
-        message.style.backgroundColor = (sender === "user") ? "#e6f2ff" : "#f2f2f2";
-        message.style.textAlign = (sender === "user") ? "right" : "left";
-        chatbox.appendChild(message);
-
-      }
-      sendButton.addEventListener("click", function() {
-        var text = inputText.value;
-        if (text !== "") {
-          addMessage(text, "user");
-          inputText.value = "";
-         
-        }});
-        receiveButton.addEventListener("click", function() {
-        var text = inputText.value;
-        if (text !== "") {
-          addMessage(text, "sender");
-          inputText.value = "";
-          
-        }});
-    </script>-->

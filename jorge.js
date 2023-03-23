@@ -1,4 +1,3 @@
-// Pega o checkbox
 const botaoDark = document.getElementById('toggle-dark');
 const chatbox = document.getElementById("chatbox");
 const inputText = document.getElementById("input-text");
@@ -24,14 +23,14 @@ function addMessage(text, sender) {
   // Adicione aqui o código onde cria o Titulo da mensagem
   var messageAtendente = document.createElement("p");
   messageAtendente.textContent = (sender === "user") ? "Você diz:" : "Atendente diz:";
-  messageAtendente.style.fontSize = "14px";
   messageAtendente.style.textAlign = (sender === "user") ? "right" : "left";
+  messageAtendente.className = "titulo-msg";
   chatbox.appendChild(messageAtendente);
 
   // Adicione aqui o código onde cria o parágrafo da mensagem enviada
   var message = document.createElement("p");
   message.textContent = text;
-  message.className = (sender === "user") ? "message-user" : "message";
+  message.className = (sender === "user") ? "message user" : "message";
   // message.style.padding = "5px";
   // message.style.borderRadius = "5px";
   // message.style.backgroundColor = (sender === "user") ? "#e6f2ff" : "#f2f2f2";
@@ -39,6 +38,8 @@ function addMessage(text, sender) {
   chatbox.appendChild(message);
 
 }
+
+//Primeira função para mandar mensagem
 
 // function receiveMessage() {
 //   var text = inputText.value;
@@ -54,12 +55,14 @@ function addMessage(text, sender) {
 //     inputText.value = "";
 //   }};
 
+
+//Segunda função para mandar mensagem
+
 sendButton.addEventListener("click", function() {
   var text = inputText.value;
   if (text !== "") {
     addMessage(text, "user");
     inputText.value = "";
-    
   }});
 
 receiveButton.addEventListener("click", function() {
@@ -67,7 +70,6 @@ receiveButton.addEventListener("click", function() {
   if (text !== "") {
     addMessage(text, "sender");
     inputText.value = "";
-    
   }});
 
 document.addEventListener('keyup', event => {
@@ -76,5 +78,4 @@ document.addEventListener('keyup', event => {
     event.preventDefault();
     // Trigger the button element with a click
     sendButton.click();
-  }
-})
+  }})
