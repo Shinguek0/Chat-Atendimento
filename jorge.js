@@ -1,3 +1,5 @@
+// Desenvolvido por Danilo Formanski e Vinicius Albino 
+
 const botaoDark = document.getElementById('toggle-dark');
 const chatbox = document.getElementById("chatbox");
 const inputText = document.getElementById("input-text");
