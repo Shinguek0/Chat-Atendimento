@@ -21,13 +21,14 @@
       }
       let theme = localStorage.getItem('data-theme');
       if (theme == 'dark') changeThemeToDark();
+      // Teste bobo
+      localStorage.setItem("jorge", 4);
+      let ll = localStorage.getItem('jorge');
+      if (ll >= 5) alert(ll);
     </script>
   </head>
-  <header>
-    
-  </header>
   <body>
-    <!-- Título -->
+    <!-- Switch -->
     <div class="switch__container">
       <label class="switch">
         <input type="checkbox" name="toggle-dark" id="toggle-dark">
@@ -36,15 +37,28 @@
     </div>
     <h2 class="styleHeader">Atendimento Online</h2>
     <!-- Chat -->
-    <div id="chatbox"></div>  
+    <div id="chatbox">
+      <div class="messageBox user">
+        <p class="titulo-msg">titulo</p>
+        <p class="msg">Oi ramon</p>
+      </div>
+      <div class="messageBox">
+        <p class="titulo-msg">titulo</p>
+        <p class="msg receiver">Salve pai</p>
+      </div>
+      <div class="messageBox user">
+        <p class="titulo-msg">titulo</p>
+        <p class="msg">aaaaaaaaaaaaaa</p>
+      </div>
+    </div>  
+    <!-- Input de mensagem -->
     <div id="input-container">
-        <!-- Input de mensagem -->
       <input type="text" id="input-text" placeholder="Digite sua mensagem aqui...">
-      <div style="gap: 5px;">
+      <div>
         <!-- Botão de enviar -->
-        <button type="button" onclick="sendMessage()" id="send-button">Enviar</button>
+        <button type="button" onclick="sendMessage()" id="send-button" class="button">Enviar</button>
         <!-- Botão de receber -->
-        <button type="button" onclick="receiveMessage()" id="receive-button">Receber</button>
+        <button type="button" onclick="receiveMessage()" id="receive-button" class="button">Receber</button>
       </div>
     </div>
   </body>

@@ -6,12 +6,11 @@ const inputText = document.getElementById("input-text");
 const sendButton = document.getElementById("send-button");
 const receiveButton = document.getElementById("receive-button");
 
-// Verifica se tem no localStorage seleção do dark theme
+// Mantem o botão ativo se o thema estiver como dark
 if (localStorage.getItem('data-theme') == 'dark') {
   botaoDark.checked = true;
 }
 
-// Liga a função ao checkbox
 botaoDark.addEventListener('change', () => {
     let theme = localStorage.getItem('data-theme'); // Retrieve saved them from local storage
     if (!botaoDark.checked){
@@ -22,23 +21,39 @@ botaoDark.addEventListener('change', () => {
 });
 
 function addMessage(text, sender) {
+  //Cria o elemento da div
+  var messageBox = document.createElement('div');
+  messageBox.className = (sender === "user") ? "messageBox user" : "messageBox";
+
   // Adicione aqui o código onde cria o Titulo da mensagem
-  var messageAtendente = document.createElement("p");
-  messageAtendente.textContent = (sender === "user") ? "Você diz:" : "Atendente diz:";
-  messageAtendente.style.textAlign = (sender === "user") ? "right" : "left";
-  messageAtendente.className = "titulo-msg";
-  chatbox.appendChild(messageAtendente);
+  var messageTitle = document.createElement("p");
+  messageTitle.textContent = (sender === "user") ? "Você diz:" : "Atendente diz:";
+  //messageTitle.style.textAlign = (sender === "user") ? "right" : "left";
+  messageTitle.className = "titulo-msg";
+  // chatbox.appendChild(messageTitle);
 
   // Adicione aqui o código onde cria o parágrafo da mensagem enviada
   var message = document.createElement("p");
   message.textContent = text;
-  message.className = (sender === "user") ? "message user" : "message";
+  message.className = "msg";
   // message.style.padding = "5px";
   // message.style.borderRadius = "5px";
   // message.style.backgroundColor = (sender === "user") ? "#e6f2ff" : "#f2f2f2";
   // message.style.textAlign = (sender === "user") ? "right" : "left";
-  chatbox.appendChild(message);
+  // chatbox.appendChild(message);
+  messageBox.addEventListener("click", removeItem);
 
+  messageBox.appendChild(messageTitle);
+  messageBox.appendChild(message);
+  chatbox.appendChild(messageBox);
+}
+
+// Temporario
+function removeItem(event) {
+
+  const msgTarget = event.target;
+
+  chatbox.removeChild(msgTarget);
 }
 
 //Primeira função para mandar mensagem
@@ -81,3 +96,5 @@ document.addEventListener('keyup', event => {
     // Trigger the button element with a click
     sendButton.click();
   }})
+
+//Terceira fução para mandar mensagem
